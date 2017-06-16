@@ -6,7 +6,7 @@ public class Point {
 	static int INIT_X = 25;			// propriété de classe 		
 	static int INIT_Y = 25;
 	
-	public Point(){					//nouveau point sans argument
+	public Point(){					//nouveau point sans argument 
 		this (INIT_X, INIT_Y);
 	}
 	

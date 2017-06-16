@@ -1,6 +1,6 @@
 package tpclasses;
 
-public class Rond {
+public class Rond extends Figure implements Surfaceable {
 	
 	int r;
 	Point cent;
@@ -11,9 +11,25 @@ public class Rond {
 			
 	}
 	public String toString() {
-		return "[ROND "+ cent +", "+ r +"]";
+		return "["+ getType() + " " + cent +", "+ r +"]";
 	}
-	public void afficher() {
-		System.out.println(toString());;
+	public String getType(){
+		return "ROND";
+	}
+	public void affCentre(){
+		System.out.println("Le centre de ce rond est : " + cent);
+	}
+	public Point getCentre(){
+		return cent;
+	}
+	
+	public double surface() {
+		return (Math.PI * r * r);
+	}
+	public void affSurface(){
+		System.out.println("La surface de ce rond est : " + surface());  
+	}
+	public Point[] getPoints(){
+		return new Point[] {cent};
 	}
 }
