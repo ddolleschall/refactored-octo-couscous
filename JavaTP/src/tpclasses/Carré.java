@@ -1,6 +1,6 @@
 package tpclasses;
 
-public class Carré extends Rectangle {
+public class Carré extends Rectangle implements Surfaceable {
 	int coté;
 	public Carré(Point coin1, int coté) {
 		super (coin1, coté, coté);
@@ -8,6 +8,12 @@ public class Carré extends Rectangle {
 	}
 	public String getType(){
 		return "CARRE";
+	}
+	public void affCentre(){
+		System.out.println("Le centre de ce carré est : " + centrerect );
+	}
+	public void affSurface(){
+		System.out.println("La surface de ce carré est de : " + surface());
 	}
 }
 

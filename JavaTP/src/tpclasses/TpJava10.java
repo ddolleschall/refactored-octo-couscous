@@ -1,5 +1,8 @@
 package tpclasses;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class TpJava10 {
 
 	public static void main(String[] args) {
@@ -37,7 +40,7 @@ public class TpJava10 {
 		sss.affSurface();
 		System.out.println(FigureUtil.getRandomSurfaceable());
 		System.out.println(FigureUtil.getRandomSurfaceable());
-		System.out.println(FigureUtil.getRandomFigure());*/
+		System.out.println(FigureUtil.getRandomFigure());
 		Point p = new Point(2,2);
 		Carré car = new Carré(p,5);
 		Rectangle rec = new Rectangle(p,3,4);
@@ -45,8 +48,21 @@ public class TpJava10 {
 		Figure[] figfig = new Figure[] {car, rec, ronron};
 		Point var[] = ronron.getPoints();
 		for (int i = 0; i < var.length; i++) System.out.println(var[i]);
-		Point vfjk[] = FigureUtil.getPoints(figfig);
-		for (int i = 0; i < vfjk.length; i++) System.out.print(vfjk[i]);
+		Point vfjk[] = FigureUtil.getPoints(car, rec, ronron);
+		for (int i = 0; i < vfjk.length; i++) System.out.print(vfjk[i]);*/
+		Point p = new Point(2,2);
+		Rectangle rec = new Rectangle(p,3,4);
+		Carré car = new Carré(p,5);
+		Set<Figure> ff = new HashSet<Figure>();
+		ff.add(rec);
+		ff.add(car);
+		System.out.println(ff.contains(rec));
+		System.out.println(ff.size());
+		for (Figure figcollection : ff ) {
+			figcollection.afficher();
+		}
 		
+		Dessin dessin = new Dessin ();
+			System.out.println(dessin.add(FigureUtil.genere(5)));
 	}
 }
