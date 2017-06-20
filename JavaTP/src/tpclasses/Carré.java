@@ -2,9 +2,14 @@ package tpclasses;
 
 public class Carré extends Rectangle implements Surfaceable {
 	int coté;
-	public Carré(Point coin1, int coté) {
-		super (coin1, coté, coté);
+	public Carré(Point coin1, int coté, Couleur color) {
+		super (coin1, coté, coté, color);
 		this.coté = coté;
+		this.couleur = color;
+	}
+	public Carré(Point coin1, int coté) {
+		super (coin1, coté, coté, Couleur.getCouleurDefaut());
+		
 	}
 	public String getType(){
 		return "CARRE";
@@ -15,6 +20,7 @@ public class Carré extends Rectangle implements Surfaceable {
 	public void affSurface(){
 		System.out.println("La surface de ce carré est de : " + surface());
 	}
+	
 }
 
 /*	Sans héritage : 

@@ -1,26 +1,28 @@
 package tpclasses;
 
 import java.util.HashSet;
-import java.util.Set;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 
-public class Dessin {
+public class Dessin extends ArrayList<Figure> implements Serializable {
 
 
+	private static final long serialVersionUID = 1L;
 
-	Set<Figure> ff = new HashSet<Figure>();
-
-	public boolean add(Figure fig) {
-		return ff.add(fig);
+	public Dessin(Collection<Figure> coll){
+		super(coll);
 	}
-	
 	public Collection<Figure> getFigures(){
-		return ff;
+		return this;
 	}
 
 	public  Collection<Figure> add(Collection<Figure> genere) {
-		return ff = (Set<Figure>) genere;
+		Collection<Figure> coll = new HashSet<Figure>();
+		coll.addAll(genere);
+		return coll;
 		
 	}
+	
 	
 }
